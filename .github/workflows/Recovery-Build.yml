@@ -107,14 +107,14 @@ jobs:
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
-        swap-size-gb: 10
+        swap-size-gb: 12
 
     - name: Building recovery
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-        mka pbrp -j$(nproc --all)
+        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean
+        mka ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Upload to Release
@@ -129,5 +129,7 @@ jobs:
           Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
           Device: ${{ github.event.inputs.DEVICE_NAME }}
           Target: ${{ github.event.inputs.BUILD_TARGET }}.img
+          SkyHawk Recovery for ${{ github.event.inputs.DEVICE_NAME }}
+          Flash at your own risk, Recovery is still under testing.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
