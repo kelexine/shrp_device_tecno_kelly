@@ -173,8 +173,9 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # SHRP
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /sys/devices/virtual/torch/torch/torch_level
+#SHRP_FLASH := 1
+#SHRP_CUSTOM_FLASHLIGHT := true
+#SHRP_FONP_1 := /sys/devices/virtual/torch/torch/torch_level
 SHRP_DEVICE_CODE := kelly
 SHRP_DARK := true
 SHRP_EXPRESS := true
@@ -184,7 +185,6 @@ SHRP_MAINTAINER := kelexine
 SHRP_REC_TYPE := SAR
 SHRP_DEVICE_TYPE := A/B
 SHRP_AB := true
-SHRP_FLASH := 1
 SHRP_INTERNAL := /sdcard
 SHRP_EXTERNAL := /external_sd
 SHRP_OTG := /usb_otg
