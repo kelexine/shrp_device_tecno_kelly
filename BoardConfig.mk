@@ -179,7 +179,6 @@ SHRP_DEVICE_CODE := kelly
 SHRP_DARK := true
 SHRP_EXPRESS := true
 SHRP_EXPRESS_USE_DATA := true
-SHRP_LITE := true
 SHRP_PATH := device/tecno/kelly
 SHRP_MAINTAINER := kelexine
 SHRP_REC_TYPE := SAR
